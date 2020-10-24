@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
   font-family: 'Raleway', sans-serif;
   /* Test for this*/
@@ -31,6 +38,7 @@ a.skip {
   position: absolute;
   top: -40px;
   -webkit-transition: top 1s ease-out;
+  -o-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
 }
@@ -38,7 +46,8 @@ a.skip {
 a.skip:focus {
   top: 20px;
   color: black;
-  text-decoration-style: solid;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
 }
 
 *:focus {
@@ -75,21 +84,38 @@ footer {
 }
 
 #logo {
-  animation-duration: 1s;
-  animation-name: logo_wiggle;
-  animation-iteration-count: 1;
-  align-self: center;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-name: logo_wiggle;
+          animation-name: logo_wiggle;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 /* Cards! */
 
 .pricing {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 500px;
-  flex-direction: column;
-  flex-basis: 400px;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .card {
@@ -97,7 +123,8 @@ footer {
   background: #fff;
   border-radius: 7px;
   padding: 0 0 50px 0;
-  flex-basis: 400px;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
 }
 
 .card>header {
@@ -136,18 +163,28 @@ footer {
 
 .card_big {
   -webkit-transform: initial;
-  transform: initial;
+  -ms-transform: initial;
+      transform: initial;
 }
 
 /* Gallery! */
 
 .gallery {
   min-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .gallery>img {
@@ -161,14 +198,29 @@ footer {
 header {
   background: #fff;
   border-bottom: 3px solid #50C7C7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  align-items: center;
 }
 
+
+
 .nav_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav_item a {
@@ -186,38 +238,58 @@ header {
 @media screen and (min-width: 850px) {
   /* Cards! */
   .pricing {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .card {
-    flex-basis: 225px;
+    -ms-flex-preferred-size: 225px;
+        flex-basis: 225px;
   }
   .card_big {
     -webkit-transform: scaleX(1.12);
-    transform: scaleX(1.12);
+    -ms-transform: scaleX(1.12);
+        transform: scaleX(1.12);
   }
   /* Navbar */
   header {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .nav_links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: auto;
   }
   .nav_item a {
     padding: 10px;
-    flex-basis: 420px;
+    -ms-flex-preferred-size: 420px;
+        flex-basis: 420px;
   }
   .gallery {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 }
 
 @media print {
   .card {
-    flex-basis: 200px;
+    -ms-flex-preferred-size: 200px;
+        flex-basis: 200px;
   }
   /*Your code here again.*/
   /*You will want four selectors*/
@@ -225,9 +297,11 @@ header {
     background-image: none;
   }
   .pricing {
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  #galllery {
+  #gallery {
     display: none;
   }
   .gallery {
@@ -241,6 +315,7 @@ header {
 
 @media screen and (prefers-reduced-motion: reduce) {
   #logo {
-    animation: none;
+    -webkit-animation: none;
+            animation: none;
   }
 }
